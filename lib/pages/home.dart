@@ -13,8 +13,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffedf3f6),
       body: Container(
-        child: Column(children: [
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
           Stack(
             children: [Container(
               height: 220,
@@ -37,16 +40,41 @@ class _HomeState extends State<Home> {
             ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20)),
-                margin: EdgeInsets.only(top: 120.0, left: 20.0),
-                child: Row(
-                  children: [
-                    Image.asset("images/quiz.jpg"),
-                  ],
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                margin: EdgeInsets.only(top: 120.0, left: 20.0, right: 20),
+                child: SizedBox(
+                  width: double.infinity, // Set the width to infinity to fill the parent width
+                  height: 200, // Assuming you want a fixed height for the container
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.asset(
+                            "images/quiz-image.jpg",
+                            fit: BoxFit.fill // This will make the image fill the available space
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               )
             ]
-          )
+          ),
+          SizedBox(height: 30.0,),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Text("Top Quiz Categories" , style:  TextStyle(color: Colors.black , fontSize: 24.0, fontWeight: FontWeight.w900)),
+            ),
+            Row(
+              children: [
+
+              ],
+            )
         ],),
       ),
     );
