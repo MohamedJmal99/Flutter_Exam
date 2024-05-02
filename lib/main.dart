@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_exam/pages/home.dart';
+import 'package:flutter_exam/pages/question.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Home()
+      home: Question()
     );
   }
 }
