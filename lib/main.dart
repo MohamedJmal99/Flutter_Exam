@@ -1,9 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_exam/Admin/add_quiz.dart';
+import 'package:flutter_exam/Admin/admin_login.dart';
+import 'package:flutter_exam/firebase_options.dart';
 import 'package:flutter_exam/pages/home.dart';
 import 'package:flutter_exam/pages/question.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +41,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Question()
+      home: AddQuiz()
     );
   }
 }
