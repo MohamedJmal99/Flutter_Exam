@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_exam/pages/question.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,6 +12,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,178 +98,220 @@ class _HomeState extends State<Home> {
                         fontSize: 24.0,
                         fontWeight: FontWeight.w900)),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                          width: 150,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "images/place.jpg",
-                                height: 80,
-                                width: 80,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(height: 20.0),
-                              Text("Place",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 22.0,
-                                      fontWeight: FontWeight.w500)),
-                            ],
-                          )
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Question(category: "Place",)));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                            width: 150,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  "images/place.jpg",
+                                  height: 80,
+                                  width: 80,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(height: 20.0),
+                                Text("Place",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 22.0,
+                                        fontWeight: FontWeight.w500)),
+                              ],
+                            )),
                       ),
                     ),
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                          width: 150,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "images/animal.jpg",
-                                height: 80,
-                                width: 80,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(height: 20.0),
-                              Text("Animals",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 22.0,
-                                      fontWeight: FontWeight.w500)),
-                            ],
-                          )
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Question(category: "Animal",)));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                            width: 150,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  "images/animal.jpg",
+                                  height: 80,
+                                  width: 80,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(height: 20.0),
+                                Text("Animals",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 22.0,
+                                        fontWeight: FontWeight.w500)),
+                              ],
+                            )),
                       ),
                     )
                   ],
                 ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                          width: 150,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "images/fruit.jpg",
-                                height: 80,
-                                width: 80,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(height: 20.0),
-                              Text("Fruits",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 22.0,
-                                      fontWeight: FontWeight.w500)),
-                            ],
-                          )
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Question(category: "Fruits",)));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                            width: 150,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  "images/fruit.jpg",
+                                  height: 80,
+                                  width: 80,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(height: 20.0),
+                                Text("Fruits",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 22.0,
+                                        fontWeight: FontWeight.w500)),
+                              ],
+                            )),
                       ),
                     ),
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                          width: 150,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "images/object.jpg",
-                                height: 80,
-                                width: 80,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(height: 20.0),
-                              Text("Objects",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 22.0,
-                                      fontWeight: FontWeight.w500)),
-                            ],
-                          )
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Question(category: "Objects",)));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                            width: 150,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  "images/object.jpg",
+                                  height: 80,
+                                  width: 80,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(height: 20.0),
+                                Text("Objects",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 22.0,
+                                        fontWeight: FontWeight.w500)),
+                              ],
+                            )),
                       ),
                     )
                   ],
                 ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                          width: 150,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "images/football.jpg",
-                                height: 80,
-                                width: 80,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(height: 20.0),
-                              Text("Sports",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 22.0,
-                                      fontWeight: FontWeight.w500)),
-                            ],
-                          )
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Question(category: "Sports",)));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                            width: 150,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  "images/football.jpg",
+                                  height: 80,
+                                  width: 80,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(height: 20.0),
+                                Text("Sports",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 22.0,
+                                        fontWeight: FontWeight.w500)),
+                              ],
+                            )),
                       ),
                     ),
-                    Material(
-                      borderRadius: BorderRadius.circular(20),
-                      elevation: 5.0,
-                      child: Container(
-                          width: 150,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "images/quiz-box.jpg",
-                                height: 80,
-                                width: 80,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(height: 20.0),
-                              Text("Random",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 22.0,
-                                      fontWeight: FontWeight.w500)),
-                            ],
-                          )
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Question(category: "Random",)));
+                      },
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 5.0,
+                        child: Container(
+                            width: 150,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  "images/quiz-box.jpg",
+                                  height: 80,
+                                  width: 80,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(height: 20.0),
+                                Text("Random",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 22.0,
+                                        fontWeight: FontWeight.w500)),
+                              ],
+                            )),
                       ),
                     )
                   ],

@@ -141,9 +141,12 @@ class _AddQuizState extends State<AddQuiz> {
                               border:
                                   Border.all(color: Colors.black, width: 1.5),
                               borderRadius: BorderRadius.circular(20)),
-                          child: Image.file(
-                            selectedImage!,
-                            fit: BoxFit.cover,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.file(
+                              selectedImage!,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
